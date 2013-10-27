@@ -87,7 +87,7 @@ body{
    border-radius: 5px;
    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;*
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: white;
    font-family: Helvetica, Arial, Sans-Serif;
@@ -452,5 +452,22 @@ li:hover li a:hover
   height:auto ;
   border: 1px solid blue;
   margin: 0 auto;
+  
+}
+.btnBuscar
+{
+    clear:both;
+    
+}
+.container
+{
+  border:1px solid red;
+  width: auto;
+  height: auto;
+  clear: both;
+  float: left;
+  margin:0px 10px 10px 10px;
+  padding: 0px 20px 10px 20px;
+ 
   
 }

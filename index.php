@@ -32,13 +32,7 @@
 				});
 				
 			});			
-		</script>
-                
-        <?php
-            include ("/Conexion/MySQL.php"); 
-            include ("/Conexion/MySQLQueries.php"); 
-        ?>
-
+		</script>                
 	</head>
 	<body>
             
@@ -46,13 +40,14 @@
 			<div class="Login">				
 					<form id="form" name="form" method="POST">						
 						<label class="loginText">Email</label>
-						<input type="text" name="email" id="name" class="loginInput" placeholder="Email" />
+						<input type="text" name="correo" id="correo" class="loginInput" placeholder="Email" />
 						<label class="loginText">Password</label>
-						<input type="password" name="pass" id="pass" class="loginInput" placeholder="Password" />				
+						<input type="password" name="password" id="password" class="loginInput" placeholder="Password" />				
 						<div class="botones">
-							<button type="submit" class="Boton" id="btnLogin" >Sign In</button>
+							<button type="submit" class="Boton" id="btnLogin" >Entrar!</button>
 							<!--<a href="#"><button type="submit" class="BotonRegis" id="btnRegistro">Registrate!</button></a>-->
-							<input type="button" value="Registrate" class="button" data-type="zoomout" />
+							<input type="button" value="Registrate" class="button" data-type="zoomout"
+                                                               id="btnReg"/>
 						</div>
 					</form>	
 			</div>
@@ -61,7 +56,7 @@
 		<div class="container">			
 			<div>
 			    <ul id="nav">
-			        <li class="currentDos"><a href="#">Inicio</a></li>
+			        <li class="currentDos"><a href="index.php">Inicio</a></li>
 			        <li><a href="#">Local</a>
 			            <ul id="subnav">
 			                <li><a href="#">Elemento 1</a></li>
@@ -77,8 +72,11 @@
 			            </ul>
 	        		</li>
 	        		<li><a href="#">Contactanos</a></li>
-	        		<li><input type="text" name="busqueda" id="search" placeholder="Buscar" /></li>
+	        		<li>
+                                    <input type="text" name="busqueda" id="search" placeholder="Buscar" />                                                                                                        
+                                </li>                                                              
 	    		</ul>	    		
+                       
 			</div>
 			<div  class="noticia-principal">
 				<div class="titulonoticia">Aqui va el Titulo de la Noticia Principal Local.</div><!--TituloNoticia-->
@@ -91,7 +89,7 @@
 			<div  class="noticia-principal">
 				<div class="titulonoticia">Aqui Va el Titulo Noticia Local o Internacional.</div><!--TituloNoticiaInternaiconak-->
 				<p class="descripcionbreve">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
-				<a href="#" id="linkDesc">Link Descripcion</a>
+				<a href="DetalleNoticia.php" id="linkDesc">Link Descripcion</a>
 				</p>
     			<img class="imgnoticia" src="images/defaultimg.png" alt="defaultimg.png">
 			</div><!--Noticia Principal Nacional o Internacional-->					
@@ -149,14 +147,13 @@
 			<!--***************POP UP******************-->
 			<div class="overlay-container">
 				<div class="window-container zoomout">
-					<fieldset id="formulario">
-						<form action="" id="form" name="form">
+					<fieldset id="formulario">                                            
+						<form id="form" name="form" method="POST" action="Servlet/Registrar.php" >
 							<h1>Registrate Es Gratis!</h1>
 							<label>Nombre
 								<span class="detalle">Ingrese su nombre</span>
-							</label>
+							</label>                                                                                           
 							<input type="text" name="name" id="name" />
-
 							<label>Apellido
 								<span class="detalle">Ingrese su apellido</span>
 							</label>
@@ -168,12 +165,42 @@
 							<label>Password
 								<span class="detalle">Ingrese su passworrd</span>
 							</label>
-							<input type="password" name="pass" id="pass" />						
-							<button type="submit">Aceptar</button>
+							<input type="password" name="pass" id="pass" />	
+                                                        <script>
+                                                            function ValidarRegistro()
+                                                            {
+                                                                
+                                                                    if($('#name').val()=='')
+                                                                          {
+                                                                              alert('Favor de Llenar el campo Nombre');
+                                                                              $('#name').focus();
+                                                                              return false;
+                                                                          }
+                                                                    if( $('#apellido').val()=='')
+                                                                          {
+                                                                              alert('Favor de Llenar el campo Apellido Paterno');
+                                                                              $('#apellido').focus();
+                                                                          }
+                                                                    if( $('#email').val()=='')
+                                                                          {
+                                                                              alert('Favor de Llenar el campo Email');
+                                                                              $('#email').focus();
+                                                                          }
+                                                                    if( $('#pass').val()=='')
+                                                                    {
+                                                                              alert('Favor de Llenar el campo Password');
+                                                                              $('#pass').focus();
+                                                                    }                                                                  
+                                                                }
+                                                                
+                                                                
+                                                        </script>
+							<button type="submit" id="EnviarReg" onclick="ValidarRegistro()" >Aceptar</button>
 						</form>
 					</fieldset>
 					<span class="close">Cerrar</span>
 				</div>	
+                        </div>
 		</div><!--Container-->
 		<div class="PiePagina"></div><!--Pie de Pagina-->
 	</body>
