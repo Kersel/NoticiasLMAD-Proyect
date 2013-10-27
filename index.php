@@ -33,8 +33,15 @@
 				
 			});			
 		</script>
+                
+        <?php
+            include ("/Conexion/MySQL.php"); 
+            include ("/Conexion/MySQLQueries.php"); 
+        ?>
+
 	</head>
 	<body>
+            
 		<div class="logo">
 			<div class="Login">				
 					<form id="form" name="form" method="POST">						
@@ -104,6 +111,14 @@
 							<li><a href="#">quinta noticia</a></li>
 							<li><a href="#">sexta noticia</a></li>
 							<li><a href="#">septima noticia</a></li>
+                                                        <?php
+                                                            $conexion = MySQL::abrirConexion();
+                                                            $datos = mysql_query(MySQLQueries::$listarPerfiles, $conexion);
+                                                            while($val=  (mysql_fetch_array($datos))){
+                                                                echo '<li><a href="#">'.$val[1].'</a></li>';
+                                                            }
+                                                            MySQL::cerrarConexion($conexion);
+                                                        ?>
 						</ul>
 				</div><!--Noticias Mas Vistas Dinamicamente-->
 				<div class="NoticiasRelevantes" align="center">
@@ -127,7 +142,7 @@
 							<li><a href="#">cuarta Noticia</a></li>
 							<li><a href="#">quinta noticia</a></li>
 							<li><a href="#">sexta noticia</a></li>
-							<li><a href="#">septima noticia</a></li>
+							<li><a href="#">septima noticia     </a></li>
 						</ul>
 				</div><!--Noticias Espectaculos Dinamicamente-->				
 			</div><!--Noticias Principales Dinamicamente-->			
@@ -135,7 +150,7 @@
 			<div class="overlay-container">
 				<div class="window-container zoomout">
 					<fieldset id="formulario">
-						<form id="form" name="form">
+						<form action="" id="form" name="form">
 							<h1>Registrate Es Gratis!</h1>
 							<label>Nombre
 								<span class="detalle">Ingrese su nombre</span>
