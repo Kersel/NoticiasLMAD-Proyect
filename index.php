@@ -32,7 +32,7 @@
 				});
 				
 			});			
-		</script>                
+		</script>      
 	</head>
 	<body>
 		<div class="logo">
@@ -47,7 +47,7 @@
 							<!--<a href="#"><button type="submit" class="BotonRegis" id="btnRegistro">Registrate!</button></a>-->
 							<input type="button" value="Registrate" class="button" data-type="zoomout"
                                                                id="btnReg"/>
-						</div>
+						</div>                                                
 					</form>	
 			</div>
 		</div><!-- Logo Encabezado -->
