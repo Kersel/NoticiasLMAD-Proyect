@@ -10,6 +10,7 @@
  *
  * @author RayEspinosa
  */
+
 class MySQL {
     //put your code here
 
@@ -51,6 +52,13 @@ class MySQL {
             }
             mysqli_query($conexion,$query);
             MySQL::cerrarConexion($conexion);
+    }
+    
+    static public function seccionesToString(){
+        $conexion = MySQL::abrirConexion();
+        $storedProcedure  = MySQLQueries::$obtenerOrdenamientoSecciones;
+        $resultado = MySQL::callSP($storedProcedure, null);
+        
     }
     
     

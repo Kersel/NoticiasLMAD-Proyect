@@ -13,8 +13,11 @@
 class MySQLQueries {
     public static $listarPerfiles="call listarPerfiles();";
     public static $listarSeccionesActivas="call listarSeccionesActivas();";
-    public static $obtenerNoticiasRecienteByNombre='call obtenerNoticiasRecienteByNombre(1,2);';     
-    //put your code here
+    public static $obtenerNoticiasRecienteByNombre='call obtenerNoticiasRecienteByNombre(1,2);';   
+    public static $obtenerOrdenamientoSecciones='call obtenerOrdenamientoSecciones()';
+    
+    
+    
 }
 
 ?>

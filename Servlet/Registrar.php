@@ -10,6 +10,13 @@
     $sql="call altaUsuario('$nombre','$apPat','$email','$pass','$fecha')";
     $procedure = mysql_query($sql);
     MySQL::cerrarConexion($conn);
-    header('Location: localhost/NoticiasLMAD-Proyect/index.php');
+    session_start();
+    //$_SESSION[]
+    header('Location: ../index.php');
 ?>
 
+
+
+
+
+?>

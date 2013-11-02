@@ -28,17 +28,21 @@
                 {
                     $(this).find('#subnav').fadeIn(400);
 
-                }, function()
-                {
-                    $(this).find('#subnav').fadeOut(100);
-                });
-
-            });
-        </script>                
-    </head>
+				},function()
+				{
+					$(this).find('#subnav').fadeOut(100);
+				});
+				
+			});			
+		</script>      
+	</head>
     <?php
     include ("/Conexion/MySQL.php");
     include ("/Conexion/MySQLQueries.php");
+    //$isLogged = false;
+    //session_start();
+    ///if($_SESSION[""])
+    
     ?>
     <body>
 
